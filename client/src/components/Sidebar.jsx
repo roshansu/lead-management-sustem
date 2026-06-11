@@ -7,6 +7,7 @@ import {
   Globe,
  Monitor,
   BadgeHelp,
+  BarChart
   
 } from "lucide-react";
 import { useState } from "react";
@@ -92,6 +93,11 @@ export default function Sidebar({setCurr, curr, setSource, cleanFilter}) {
           <button onClick={()=>setCurr('assigned')} className={`w-full ${curr === 'assigned' ? 'bg-gray-200':''} flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-100 transition-all`}>
             <ClipboardCheck size={20} />
             <span className="font-medium">Assigned Leads</span>
+          </button>
+
+          <button onClick={()=>setCurr('analytics')} className={`w-full ${curr === 'assigned' ? 'bg-gray-200':''} flex items-center gap-3 px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-100 transition-all`}>
+            <BarChart size={20} />
+            <span className="font-medium">Analytics</span>
           </button>
         </nav>
       </div>

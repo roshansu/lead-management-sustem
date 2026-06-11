@@ -13,6 +13,7 @@ import EmployeeTable from "../components/employee/EmployeeTable";
 import AssignLeadModal from "../components/AssignLeadModal";
 import AllAssignedLeadTable from '../components/allLead/AllAssignedLead'
 import useDebounce from "../hooks/useDebounce";
+import AnalyticsDashboard from "../components/analytics/AnalyticsDashboard";
 
 // const leads = [
 //   {
@@ -87,7 +88,8 @@ const Dashboard = () => {
     meta: <MetaLeadTable setSelectedLead={setSelectedLead} setShowAssignModal={setShowAssignModal} leads={leads} />,
     google: <GoogleLeadTable setSelectedLead={setSelectedLead} setShowAssignModal={setShowAssignModal} leads={leads} />,
     employee: <EmployeeTable  employees={employees} />,
-    assigned: <AllAssignedLeadTable leads={assignedLeads} />
+    assigned: <AllAssignedLeadTable leads={assignedLeads} />,
+    analytics: <AnalyticsDashboard/>
   };
 
   function cleanFilter() {
