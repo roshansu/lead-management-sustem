@@ -140,7 +140,7 @@ const onboardEmployee = async (fullName, email, password) => {
     .replace("{{employeeName}}", fullName)
     .replace("{{email}}", email)
     .replace("{{password}}", password)
-    .replace("{{loginUrl}}", "http://localhost:5173/login")
+    .replace("{{loginUrl}}", "https://lead-management-sustem.vercel.app/")
     .replace("{{companyName}}", "Lead Flow")
     .replace("{{supportEmail}}", "roshanjaiswal.bca@gmail.com");
 
