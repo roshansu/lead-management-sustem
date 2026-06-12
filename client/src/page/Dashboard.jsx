@@ -113,7 +113,7 @@ const Dashboard = () => {
       setLeads(res.leads);
       setData(res);
       setLoading(false);
-      console.log(res);
+      // console.log(res);
     } catch (err) {}
   }
 
@@ -128,7 +128,7 @@ const Dashboard = () => {
       setAssignedLeads(res.leads);
       setData(res);
       setLoading(false);
-      console.log(res);
+      // console.log(res);
     } catch (err) {}
   }
 

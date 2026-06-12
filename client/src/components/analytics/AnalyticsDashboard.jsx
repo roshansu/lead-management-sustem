@@ -22,7 +22,7 @@ const AnalyticsDashboard = () => {
       setLoading(true)
       const res = await apiCall('/analytics')
       setData(res)
-      console.log(res)
+      // console.log(res)
 
 
     }catch(err){
