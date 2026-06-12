@@ -7,7 +7,7 @@ export default function AssignLeadModal({
   selectedLead,
   setShowAssignModal,
 }) {
-  const [employees, setEmployees] = useState(true);
+  const [employees, setEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
 
   async function getEmployee() {
@@ -40,13 +40,15 @@ export default function AssignLeadModal({
     getEmployee();
   }, []);
 
-  // if (loading) return <Loader />;
+  // if (loading) return;
 
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-white w-[850px] rounded-3xl shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="border-b border-gray-200 px-6 py-5 flex justify-between items-center">
+
+          
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Assign Lead</h2>
 
@@ -90,22 +92,25 @@ export default function AssignLeadModal({
             </thead>
 
             <tbody>
+              {
+                loading ? <p className="text-center p-3">Loading data...</p>:''
+              }
               {employees?.map((employee) => (
                 <tr
-                  key={employee._id}
+                  key={employee?._id}
                   className="border-b border-gray-100 hover:bg-gray-50">
                   {/* Name */}
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <span className="font-medium">{employee.fullName}</span>
+                      <span className="font-medium">{employee?.fullName}</span>
                     </div>
                   </td>
 
                   {/* Email */}
-                  <td className="px-6 py-4 text-gray-600">{employee.email}</td>
+                  <td className="px-6 py-4 text-gray-600">{employee?.email}</td>
 
                   {/* Phone */}
-                  <td className="px-6 py-4 text-gray-600">{employee.phone}</td>
+                  <td className="px-6 py-4 text-gray-600">{employee?.phone}</td>
 
                   {/* Total Leads */}
                   <td className="px-6 py-4">
@@ -118,7 +123,7 @@ export default function AssignLeadModal({
                   <td className="px-6 py-4">
                     <button
                       onClick={() =>
-                        handleAssignLead(selectedLead._id, employee._id, employee.fullName)
+                        handleAssignLead(selectedLead?._id, employee?._id, employee?.fullName)
                       }
                       className="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-black transition-all">
                       Assign

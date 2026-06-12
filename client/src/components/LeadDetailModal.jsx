@@ -27,6 +27,8 @@ export default function LeadsDetailModal({
     getEmployeeLeads()
   },[])
 
+  // if(loading) return
+
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50">
 
@@ -86,10 +88,12 @@ export default function LeadsDetailModal({
             </thead>
 
             <tbody>
-
+              {
+                loading ? <p className="text-center p-3">Loading data...</p>:''
+              }
               {leads?.map((lead) => (
                 <tr
-                  key={lead._id}
+                  key={lead?._id}
                   className="border-b border-gray-100 hover:bg-gray-50"
                 >
 
@@ -98,30 +102,28 @@ export default function LeadsDetailModal({
 
 
                       <span className="font-medium">
-                        {lead.fullName}
+                        {lead?.fullName}
                       </span>
 
                     </div>
                   </td>
 
                   <td className="px-6 py-4 text-gray-600">
-                    {lead.email}
+                    {lead?.email}
                   </td>
 
                   <td className="px-6 py-4 text-gray-600">
-                    {lead.phone}
+                    {lead?.phone}
                   </td>
 
                   <td className="px-6 py-4">
                     <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">
-                      {lead.source}
+                      {lead?.source}
                     </span>
                   </td>
 
                   <td className="px-6 py-4 text-gray-600">
-                    {new Date(
-                      lead.createdAt
-                    ).toLocaleDateString()}
+                    {lead?.time}
                   </td>
 
                 </tr>
