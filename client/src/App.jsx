@@ -4,8 +4,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from './page/Login'
 import Dashboard from './page/Dashboard';
-import ProtectedAuth from './components/protectedRoute/protectedAuth';
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
+import ProtectedAuth from './components/protectedRoute/ProtectedAuth';
 
 const App = () => {
   return (
