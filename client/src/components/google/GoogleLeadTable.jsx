@@ -9,10 +9,12 @@ export default function GoogleLeadTable({ leads,setSelectedLead, setShowAssignMo
     <div className="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
 
       {/* Table Header */}
-      <div className="px-6 py-5 border-b border-gray-200">
+      <div className="px-6 flex justify-around items-center py-5 border-b border-gray-200">
         <h2 className="text-lg font-semibold text-gray-900">
           Leads
         </h2>
+        <h3>{leads?.length} leads</h3>
+
       </div>
 
       <div className="overflow-x-auto">

@@ -13,7 +13,7 @@ export default function WebsiteLeadTable({ leads,setSelectedLead, setShowAssignM
         <h2 className="text-lg font-semibold text-gray-900">
           Leads
         </h2>
-        <h3>80 leads</h3>
+        <h3>{leads?.length} leads</h3>
       </div>
 
       <div className="overflow-x-auto">
