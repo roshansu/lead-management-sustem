@@ -16,7 +16,10 @@ const app = e()
 const PORT = process.env.PORT || 5000
 app.use(e.json())
 app.use(cookieParser())
-app.use(cors())
+app.use(cors({
+    origin: ['https://lead-management-sustem.vercel.app', 'http://localhost:5173'],
+    credentials: true
+}))
 
 app.use('/api/leads', leadsRoute)
 app.use('/api/user', userAuthRoute)
