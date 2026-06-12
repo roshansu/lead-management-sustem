@@ -141,10 +141,10 @@ setCampaign, clearFilter, getData, setSearch, search, setAssignedSource
         }
 
         {/* <button onClick={fetchDataByFilter} className="px-4 ml-2 cursor-pointer py-2 hover:bg-gray-700 transition-colors duration-300 text-white bg-gray-900 rounded-md">Apply</button> */}
-        <button onClick={()=>{
+        {/* <button onClick={()=>{
           clearFilter()
           getData()
-        }} className="px-4 ml-2 cursor-pointer py-2 hover:bg-red-700 transition-colors duration-300 text-white bg-red-900 rounded-md">Clear</button>
+        }} className="px-4 ml-2 cursor-pointer py-2 hover:bg-red-700 transition-colors duration-300 text-white bg-red-900 rounded-md">Clear</button> */}
 
         {/* <select 
           className="flex items-center gap-2 px-5 py-3 bg-gray-50 border border-gray-200 rounded-2xl hover:bg-gray-100 transition-all"

@@ -2,10 +2,11 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import apiCall from "../api/api";
 import { setUserData } from "../utils/setLocalData";
+import { useNavigate } from "react-router-dom";
 
 // toast.success("Lead Added Successfully");
 export default function Login() {
-
+  const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -19,7 +20,7 @@ export default function Login() {
         if(res.success){
             toast.success("Login success")
             setUserData(res)
-            window.location.href ='/dashboard'
+            navigate('/dashboard')
         }else{
             toast.error(res.message)
         }

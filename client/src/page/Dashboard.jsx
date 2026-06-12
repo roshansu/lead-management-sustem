@@ -87,7 +87,7 @@ const Dashboard = () => {
     website: <WebsiteLeadTable setSelectedLead={setSelectedLead} setShowAssignModal={setShowAssignModal} leads={leads} />,
     meta: <MetaLeadTable setSelectedLead={setSelectedLead} setShowAssignModal={setShowAssignModal} leads={leads} />,
     google: <GoogleLeadTable setSelectedLead={setSelectedLead} setShowAssignModal={setShowAssignModal} leads={leads} />,
-    employee: <EmployeeTable  employees={employees} />,
+    employee: <EmployeeTable  employees={employees} debounceSearch={debounceSearch} />,
     assigned: <AllAssignedLeadTable leads={assignedLeads} />,
     analytics: <AnalyticsDashboard/>
   };

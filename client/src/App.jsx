@@ -4,14 +4,24 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from './page/Login'
 import Dashboard from './page/Dashboard';
+import ProtectedAuth from './components/protectedRoute/protectedAuth';
+import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 
 const App = () => {
   return (
     <BrowserRouter>
       <ToastContainer />
       <Routes>
-        <Route path='/' element={<Login/>} />
-        <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/' element={
+           <ProtectedAuth>
+            <Login/>
+           </ProtectedAuth> 
+        } />
+        <Route path='/dashboard' element={
+          <ProtectedRoute>
+            <Dashboard/>
+           </ProtectedRoute> 
+        }/>
       </Routes>
     </BrowserRouter>
   )

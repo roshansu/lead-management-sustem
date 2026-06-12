@@ -3,8 +3,9 @@ import Loader from "../Loader";
 import apiCall from "../../api/api";
 import LeadsDetailModal from "../LeadDetailModal";
 import AddEmployeeModal from "../AddEmployeeModal";
+import useDebounce from "../../hooks/useDebounce";
 
-export default function EmployeeTable() {
+export default function EmployeeTable({debounceSearch}) {
   const [employees, setEmployees] = useState(true);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -15,7 +16,7 @@ export default function EmployeeTable() {
   async function getEmployee() {
     try {
       setLoading(true);
-      const res = await apiCall("/employee");
+      const res = await apiCall(`/employee?search=${debounceSearch}`);
       setEmployees(res.data);
     } catch (err) {}
     setLoading(false);
@@ -28,7 +29,7 @@ export default function EmployeeTable() {
 
   useEffect(() => {
     getEmployee();
-  }, []);
+  }, [debounceSearch]);
 
   if (loading) return <Loader />;
 

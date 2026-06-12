@@ -11,9 +11,11 @@ import {
   
 } from "lucide-react";
 import { useState } from "react";
+import { getLocalData } from "../utils/setLocalData";
 
 export default function Sidebar({setCurr, curr, setSource, cleanFilter}) {
   const [openLeads, setOpenLeads] = useState(true);
+  const user = getLocalData()
 
   return (
     <div className="w-72 h-screen bg-white border-r border-gray-200 flex flex-col">
@@ -110,8 +112,7 @@ export default function Sidebar({setCurr, curr, setSource, cleanFilter}) {
           </div>
 
           <div>
-            <h4 className="font-medium text-gray-900">Roshan Kumar</h4>
-            <p className="text-xs text-gray-500">Admin</p>
+            <h4 className="font-medium text-gray-900">{user.fullName}</h4>
           </div>
         </div>
       </div>

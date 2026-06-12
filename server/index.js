@@ -7,6 +7,7 @@ import userAuthRoute from './src/routes/userAuth.route.js'
 import employeeRoute from './src/routes/employe.route.js'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
+import analyticsRoute from './src/routes/analytics.route.js'
 
 dotenv.config()
 
@@ -20,6 +21,7 @@ app.use(cors())
 app.use('/api/leads', leadsRoute)
 app.use('/api/user', userAuthRoute)
 app.use('/api/employee', employeeRoute)
+app.use('/api/analytics', analyticsRoute)
 
 db()
 .then(()=>{

@@ -1,5 +1,10 @@
 
 export function setUserData(data){
-    JSON.parse(localStorage.setItem("user", data.user))
+    console.log(data.user)
+    localStorage.setItem("user", JSON.stringify(data.user))
     localStorage.setItem('token', data.token)
+}
+
+export function getLocalData(){
+    return JSON.parse(localStorage.getItem('user'))
 }

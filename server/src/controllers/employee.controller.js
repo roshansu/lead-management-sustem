@@ -2,7 +2,31 @@ import User from "../models/user.model.js"
 
 export const getEmployee = async(req, res)=>{
     try{
-        const data = await User.find()
+        const {search} = req.query
+        let filter = {}
+            if (search) {
+      filter.$or = [
+        {
+          fullName: {
+            $regex: search,
+            $options: "i",
+          },
+        },
+        {
+          email: {
+            $regex: search,
+            $options: "i",
+          },
+        },
+        {
+          phone: {
+            $regex: search,
+            $options: "i",
+          },
+        },
+      ];
+    }
+        const data = await User.find(filter)
 
         res.status(200).json({
             success: true,
