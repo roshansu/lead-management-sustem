@@ -19,7 +19,7 @@ function shuffleArray(arr) {
 // 0 */2 * * *
 
 const scheduleCron = async()=>{
-    cron.schedule("0 */2 * * *", async () => {
+    cron.schedule("0 */4 * * *", async () => {
   try {
         const [google, meta, website] = await Promise.all([
             fetch('https://api.mockaroo.com/api/a37f45d0?count=10&key=64196520'),

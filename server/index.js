@@ -32,7 +32,7 @@ db()
         console.log("server is listening on PORT : ", PORT)
     })
 
-    // scheduleCron()
+    scheduleCron()
 })
 .catch((err)=>{
     console.log("Error connecting: "+err)
