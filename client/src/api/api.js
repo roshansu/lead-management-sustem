@@ -1,4 +1,5 @@
-const BASE_URL = 'http://localhost:5000/api'
+// const BASE_URL = 'http://localhost:5000/api'
+const BASE_URL = 'https://lead-management-sustem-8w79.vercel.app/api'
 
 const apiCall = async (
   endpoint,
